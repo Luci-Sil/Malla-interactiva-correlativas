@@ -1,278 +1,381 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Malla Interactiva</title>
-  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-  <h1>Malla Interactiva</h1>
-  <div id="malla">
-    <div class="anio">
-      <h2>Primer Año</h2>
-       <div class="materia" data-id="pedagogia">
-      <h3>Pedagogía</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="didactica-curriculum">
-      <h3>Didáctica y Currículum</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="psicologia-educacion">
-      <h3>Psicología y Educación</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="problematica-cultura">
-      <h3>Problemática de la Cultura Argentina y Latinoamericana</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="problematica-historica-arte1">
-      <h3>Problemática Histórica del Arte I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="lenguaje-visual1">
-      <h3>Lenguaje Visual I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="dibujo1">
-      <h3>Dibujo I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="pintura1">
-      <h3>Pintura I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="ceramica1">
-      <h3>Cerámica I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="escultura1">
-      <h3>Escultura I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="forma-color1">
-      <h3>Forma y Color I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-    <div class="materia" data-id="practica-docente1">
-      <h3>Práctica Docente I</h3>
-      <label><input type="checkbox" class="regular"> Regular</label>
-      <label><input type="checkbox" class="aprobada"> Aprobada</label>
-    </div>
-  </div>
+  <h1>Malla Curricular Interactiva</h1>
 
-    <div class="anio">
-      <h2>Segundo Año</h2>
-      <div class="materia" data-id="historiaEducacion" data-regular-desbloquea="eticaTrabajo" data-aprobada-desbloquea="eticaTrabajo">
+  <div class="anios-container">
+    <!-- Primer Año -->
+    <div class="anio" id="primer-ano">
+      <h2>Primer año</h2>
+
+      <div class="materia" data-nombre="Pedagogía">
+        <h3>Pedagogía</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Didáctica y currículum">
+        <h3>Didáctica y currículum</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Psicología y educación">
+        <h3>Psicología y educación</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Problemática de la cultura argentina y latinoamericana">
+        <h3>Problemática de la cultura argentina y latinoamericana</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Problemática histórica del arte I">
+        <h3>Problemática histórica del arte I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Lenguaje visual I">
+        <h3>Lenguaje visual I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Dibujo I">
+        <h3>Dibujo I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Pintura I">
+        <h3>Pintura I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Cerámica I">
+        <h3>Cerámica I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Escultura I">
+        <h3>Escultura I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Forma y color I">
+        <h3>Forma y color I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+
+      <div class="materia" data-nombre="Práctica docente I">
+        <h3>Práctica docente I</h3>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segundo Año -->
+    <div class="anio" id="segundo-ano">
+      <h2>Segundo año</h2>
+
+      <div class="materia" data-nombre="Historia social y política de la educación Argentina">
         <h3>Historia social y política de la educación Argentina</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="antropologia" data-regular-desbloquea="filosofia">
+
+      <div class="materia" data-nombre="Antropología sociocultural">
         <h3>Antropología sociocultural</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="sujeto1" data-regular-desbloquea="didactica2,sujeto2" data-aprobada-desbloquea="practica3">
+
+      <div class="materia" data-nombre="Sujeto de la educación I">
         <h3>Sujeto de la educación I</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="didactica1" data-regular-desbloquea="didactica2" data-aprobada-desbloquea="practica3">
+
+      <div class="materia" data-nombre="Didáctica de las artes visuales I">
         <h3>Didáctica de las artes visuales I</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="arte2" data-regular-desbloquea="practica3,arteArg,esteticas" data-aprobada-desbloquea="arteArg,esteticas">
+
+      <div class="materia" data-nombre="Problemática histórica del arte II">
         <h3>Problemática histórica del arte II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="lenguaje2" data-regular-desbloquea="practica3,lenguaje3" data-aprobada-desbloquea="practica4,lenguaje3">
+
+      <div class="materia" data-nombre="Lenguaje visual II">
         <h3>Lenguaje visual II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="color2" data-aprobada-desbloquea="practica4,dibujo3,pintura3,ceramica3,escultura3">
+
+      <div class="materia" data-nombre="Forma y color II">
         <h3>Forma y color II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="dibujo2" data-regular-desbloquea="practica3,dibujo3,pintura3" data-aprobada-desbloquea="practica4,dibujo3,pintura3">
+
+      <div class="materia" data-nombre="Dibujo II">
         <h3>Dibujo II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="pintura2" data-regular-desbloquea="practica3,dibujo3,pintura3" data-aprobada-desbloquea="practica4,dibujo3,pintura3">
+
+      <div class="materia" data-nombre="Pintura II">
         <h3>Pintura II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="ceramica2" data-regular-desbloquea="practica3,ceramica3,escultura3" data-aprobada-desbloquea="practica4,ceramica3,escultura3">
+
+      <div class="materia" data-nombre="Cerámica II">
         <h3>Cerámica II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="escultura2" data-regular-desbloquea="practica3,ceramica3,escultura3" data-aprobada-desbloquea="practica4,ceramica3,escultura3">
+
+      <div class="materia" data-nombre="Escultura II">
         <h3>Escultura II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="graficas1" data-regular-desbloquea="graficas2" data-aprobada-desbloquea="graficas3">
+
+      <div class="materia" data-nombre="Gráfica y técnicas de impresión I">
         <h3>Gráfica y técnicas de impresión I</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="practica2" data-aprobada-desbloquea="practica3">
+
+      <div class="materia" data-nombre="Práctica docente II">
         <h3>Práctica docente II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
     </div>
 
-    <div class="anio">
-      <h2>Tercer Año</h2>
-      <div class="materia" data-id="filosofia" data-regular-desbloquea="eticaTrabajo,estetica" data-aprobada-desbloquea="eticaTrabajo,estetica">
+    <!-- Tercer Año -->
+    <div class="anio" id="tercer-ano">
+      <h2>Tercer año</h2>
+
+      <div class="materia" data-nombre="Problemática filosófica">
         <h3>Problemática filosófica</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="arteArg" data-regular-desbloquea="practica4,esteticas" data-aprobada-desbloquea="esteticas">
+
+      <div class="materia" data-nombre="Problemática del arte argentino y latinoamericano">
         <h3>Problemática del arte argentino y latinoamericano</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="sujeto2" data-aprobada-desbloquea="practica4">
+
+      <div class="materia" data-nombre="Sujeto de la educación II">
         <h3>Sujeto de la educación II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="didactica2" data-aprobada-desbloquea="practica4">
+
+      <div class="materia" data-nombre="Didáctica de las artes visuales II">
         <h3>Didáctica de las artes visuales II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="lenguaje3" data-regular-desbloquea="tecnologia,esteticas,investigativas,dibujo4,pintura4,ceramica4,escultura4,graficas3" data-aprobada-desbloquea="tecnologia">
+
+      <div class="materia" data-nombre="Lenguaje visual III">
         <h3>Lenguaje visual III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="esi">
+
+      <div class="materia" data-nombre="Educación sexual integral">
         <h3>Educación sexual integral</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="dibujo3" data-regular-desbloquea="practica4,dibujo4,pintura4,ceramica4,escultura4" data-aprobada-desbloquea="dibujo4,pintura4,ceramica4,escultura4">
+
+      <div class="materia" data-nombre="Dibujo III">
         <h3>Dibujo III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="pintura3" data-regular-desbloquea="practica4,dibujo4,pintura4,ceramica4,escultura4" data-aprobada-desbloquea="dibujo4,pintura4,ceramica4,escultura4">
+
+      <div class="materia" data-nombre="Pintura III">
         <h3>Pintura III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="ceramica3" data-regular-desbloquea="practica4,dibujo4,pintura4,ceramica4,escultura4" data-aprobada-desbloquea="dibujo4,pintura4,ceramica4,escultura4">
+
+      <div class="materia" data-nombre="Cerámica III">
         <h3>Cerámica III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="escultura3" data-regular-desbloquea="practica4,dibujo4,pintura4,ceramica4,escultura4" data-aprobada-desbloquea="dibujo4,pintura4,ceramica4,escultura4">
+
+      <div class="materia" data-nombre="Escultura III">
         <h3>Escultura III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="graficas2" data-regular-desbloquea="graficas3" data-aprobada-desbloquea="graficas3">
+
+      <div class="materia" data-nombre="Gráfica y técnicas de impresión II">
         <h3>Gráfica y técnicas de impresión II</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="practica3" data-aprobada-desbloquea="practica4">
+
+      <div class="materia" data-nombre="Práctica docente III">
         <h3>Práctica docente III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="udi">
+
+      <div class="materia" data-nombre="UDI">
         <h3>UDI</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
     </div>
 
-    <div class="anio">
-      <h2>Cuarto Año</h2>
-      <div class="materia" data-id="eticaTrabajo">
+    <!-- Cuarto Año -->
+    <div class="anio" id="cuarto-ano">
+      <h2>Cuarto año</h2>
+
+      <div class="materia" data-nombre="Ética y trabajo docente">
         <h3>Ética y trabajo docente</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="investigativas">
+
+      <div class="materia" data-nombre="Prácticas investigativas">
         <h3>Prácticas investigativas</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="estetica">
+
+      <div class="materia" data-nombre="Estética">
         <h3>Estética</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="esteticas">
+
+      <div class="materia" data-nombre="Estéticas contemporáneas">
         <h3>Estéticas contemporáneas</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="dibujo4">
+
+      <div class="materia" data-nombre="Proyecto final dibujo IV">
         <h3>Proyecto final dibujo IV</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular" />Regular</label>
+          <label><input type="checkbox" name="aprobada" />Aprobada</label>
+        </div>
       </div>
-      <div class="materia" data-id="pintura4">
+
+      <div class="materia" data-nombre="Proyecto final pintura IV">
         <h3>Proyecto final pintura IV</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-      <div class="materia" data-id="ceramica4">
-        <h3>Proyecto final cerámica IV</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-      <div class="materia" data-id="escultura4">
-        <h3>Proyecto final escultura IV</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-      <div class="materia" data-id="graficas3">
-        <h3>Gráfica y técnicas de impresión III</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-      <div class="materia" data-id="tecnologia">
-        <h3>Tecnología de la imagen</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-      <div class="materia" data-id="practica4">
-        <h3>Práctica docente IV</h3>
-        <label><input type="checkbox" class="regular"> Regular</label>
-        <label><input type="checkbox" class="aprobada"> Aprobada</label>
-      </div>
-    </div>
+        <div class="label-group">
+          <label><input type="checkbox" name="regular"
 
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
 
