@@ -92,3 +92,43 @@ input[type="checkbox"] {
   }
 }
 
+body {
+  background-color: #ccf5f5; /* Cian pastel */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #770077;
+}
+
+.year {
+  border: 2px solid #aa66aa; /* Magenta oscuro */
+  background-color: #f8ccf8; /* Magenta pastel */
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+  width: 45%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.materia {
+  background-color: white;
+  border: 2px solid #770077;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+}
+
+.checkbox-container {
+  margin-top: 5px;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
