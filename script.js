@@ -1,4 +1,4 @@
-// Este script permite activar materias en base al estado de regular/aprobada de sus correlativas
+// Este script permite activar materias en base al estado de regular/aprobada de sus correlativas y guardar el progreso
 
 document.addEventListener("DOMContentLoaded", function () {
   const checkboxMap = {};
@@ -65,8 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let materia in checkboxMap) {
     const { regular, aprobada } = checkboxMap[materia];
 
-    regular.addEventListener("change", () => actualizarReglas(materia));
-    aprobada.addEventListener("change", () => actualizarReglas(materia));
+    regular.addEventListener("change", () => {
+      guardarEstado(materia, "regular", regular.checked);
+      actualizarReglas(materia);
+    });
+    aprobada.addEventListener("change", () => {
+      guardarEstado(materia, "aprobada", aprobada.checked);
+      actualizarReglas(materia);
+    });
   }
 
   function actualizarReglas(materia) {
@@ -88,14 +94,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Inicialmente deshabilitar todas menos las de primer año
-  for (let nombre in checkboxMap) {
-    const materiaDiv = document.querySelector(`[data-nombre="${nombre}"]`);
-    const anio = materiaDiv.closest(".anio").querySelector("h2").textContent;
-    if (anio !== "Primer año") {
-      checkboxMap[nombre].regular.disabled = true;
-      checkboxMap[nombre].aprobada.disabled = true;
+  // Inicialmente deshabilitar todas las materias excepto las del primer año
+  document.querySelectorAll(".anio").forEach((anioDiv) => {
+    const titulo = anioDiv.querySelector("h2").textContent.trim();
+    if (titulo !== "Primer año") {
+      anioDiv.querySelectorAll(".materia").forEach((materiaDiv) => {
+        const nombre = materiaDiv.getAttribute("data-nombre");
+        checkboxMap[nombre].regular.disabled = true;
+        checkboxMap[nombre].aprobada.disabled = true;
+      });
     }
+  });
+
+  // Guardar estado en localStorage
+  function guardarEstado(materia, tipo, valor) {
+    localStorage.setItem(`${materia}_${tipo}`, valor);
+  }
+
+  // Cargar estado desde localStorage
+  for (let materia in checkboxMap) {
+    ["regular", "aprobada"].forEach((tipo) => {
+      const valor = localStorage.getItem(`${materia}_${tipo}`);
+      if (valor === "true") {
+        checkboxMap[materia][tipo].checked = true;
+        actualizarReglas(materia);
+      }
+    });
   }
 });
 
