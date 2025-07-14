@@ -1,1 +1,73 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #c94fa6; /* magenta pastel */
+}
+
+.anio {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 2px solid #a1e3e2; /* cian pastel */
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.anio h2 {
+  color: #4bbfcf; /* cian más fuerte */
+  border-bottom: 2px solid #c94fa6;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.materia {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 8px;
+  background-color: #f0faff;
+  transition: background-color 0.3s ease;
+}
+
+.materia:hover {
+  background-color: #e6f0ff;
+}
+
+.materia h3 {
+  margin: 0 0 10px 0;
+  color: #c94fa6;
+}
+
+label {
+  display: inline-block;
+  margin-right: 20px;
+  font-weight: 500;
+  color: #555;
+}
+
+input[type="checkbox"] {
+  accent-color: #c94fa6;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .materia {
+    padding: 8px;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+}
 
