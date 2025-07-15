@@ -63,9 +63,104 @@ const requisitos = {
   "practica_docente_II": {
     regular: ["pedagogia"],
     aprobado: ["practica_docente_I", "psicologia_educacion"]
-  }
-  // Resto de los años continuará...
-};
+  
+// TERCER AÑO
+"problematica_filosofica": {
+  regular: ["antropologia"],
+  aprobado: ["problematica_cultural"]
+},
+"problematica_arte_latinoamericano": {
+  regular: ["problematica_historica_II"],
+  aprobado: ["problematica_cultural", "problematica_historica_I", "problematica_historica_II"]
+},
+"sujeto_II": {
+  regular: ["sujeto_I"],
+  aprobado: ["psicologia_educacion", "sujeto_I"]
+},
+"didactica_artes_II": {
+  regular: ["didactica_artes_I", "forma_color_I", "lenguaje_visual_I", "sujeto_I"],
+  aprobado: ["didactica_curriculum", "practica_docente_I", "pedagogia", "psicologia_educacion", "didactica_artes_I"]
+},
+"lenguaje_visual_III": {
+  regular: ["lenguaje_visual_II"],
+  aprobado: ["lenguaje_visual_I", "lenguaje_visual_II"]
+},
+"esi": {
+  regular: ["psicologia_educacion"],
+  aprobado: ["psicologia_educacion"]
+},
+"dibujo_III": {
+  regular: ["dibujo_II", "pintura_II"],
+  aprobado: ["dibujo_I", "pintura_I", "dibujo_II", "pintura_II", "forma_color_II"]
+},
+"pintura_III": {
+  regular: ["dibujo_II", "pintura_II"],
+  aprobado: ["dibujo_I", "pintura_I", "dibujo_II", "pintura_II", "forma_color_II"]
+},
+"ceramica_III": {
+  regular: ["ceramica_II", "escultura_II"],
+  aprobado: ["ceramica_I", "escultura_I", "ceramica_II", "escultura_II", "forma_color_II"]
+},
+"escultura_III": {
+  regular: ["ceramica_II", "escultura_II"],
+  aprobado: ["ceramica_I", "escultura_I", "ceramica_II", "escultura_II", "forma_color_II"]
+},
+"grafica_II": {
+  regular: ["grafica_I"],
+  aprobado: ["forma_color_I", "lenguaje_visual_I", "grafica_I"]
+},
+"practica_docente_III": {
+  regular: ["dibujo_II", "pintura_II", "ceramica_II", "escultura_II", "forma_color_II", "lenguaje_visual_II", "problematica_historica_II"],
+  aprobado: ["practica_docente_II", "didactica_artes_I", "sujeto_I", "pedagogia", "didactica_curriculum", "forma_color_I", "lenguaje_visual_I", "dibujo_I", "pintura_I", "ceramica_I", "escultura_I", "problematica_historica_I"]
+},
+"udi": {} // sin requisitos
+
+// CUARTO AÑO
+"etica_trabajo_docente": {
+  regular: ["problematica_filosofica", "historia_social"],
+  aprobado: ["problematica_filosofica", "historia_social"]
+},
+"practicas_investigativas": {
+  regular: ["lenguaje_visual_III", "dibujo_II", "pintura_II", "ceramica_II", "escultura_II"],
+  aprobado: ["pedagogia", "didactica_curriculum", "psicologia_educacion", "problematica_cultural", "problematica_historica_I", "lenguaje_visual_I", "dibujo_I", "pintura_I", "ceramica_I", "escultura_I", "forma_color_I", "practica_docente_I"]
+},
+"estetica": {
+  regular: ["problematica_filosofica", "lenguaje_visual_III"],
+  aprobado: ["problematica_filosofica"]
+},
+"esteticas_contemporaneas": {
+  regular: ["lenguaje_visual_III", "problematica_arte_latinoamericano", "problematica_historica_II"],
+  aprobado: ["problematica_cultural", "problematica_arte_latinoamericano", "problematica_historica_II"]
+},
+"proyecto_dibujo_IV": {
+  regular: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III", "lenguaje_visual_III"],
+  aprobado: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III"]
+},
+"proyecto_pintura_IV": {
+  regular: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III", "lenguaje_visual_III"],
+  aprobado: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III"]
+},
+"proyecto_ceramica_IV": {
+  regular: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III", "lenguaje_visual_III"],
+  aprobado: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III"]
+},
+"proyecto_escultura_IV": {
+  regular: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III", "lenguaje_visual_III"],
+  aprobado: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III"]
+},
+"grafica_III": {
+  regular: ["grafica_II", "lenguaje_visual_III"],
+  aprobado: ["grafica_I", "grafica_II"]
+},
+"tecnologia_imagen": {
+  regular: ["lenguaje_visual_III"],
+  aprobado: ["lenguaje_visual_III"]
+},
+"practica_docente_IV": {
+  regular: ["dibujo_III", "pintura_III", "ceramica_III", "escultura_III", "lenguaje_visual_III", "problematica_arte_latinoamericano"],
+  aprobado: ["practica_docente_III", "didactica_artes_II", "sujeto_II", "forma_color_II", "lenguaje_visual_II", "dibujo_II", "pintura_II", "ceramica_II", "escultura_II"]
+}
+
 
 function guardarEstado() {
   const estados = {};
