@@ -1,84 +1,132 @@
+// script.js
 
+// Estructura: idMateria: { requisitos: [...], tipoRequisito: "regular" o "aprobado" para cada item }
+const requisitos = {
+  // PRIMER AÑO (no tiene prerequisitos)
+  "pedagogia": {},
+  "didactica_curriculum": {},
+  "psicologia_educacion": {},
+  "problematica_cultural": {},
+  "problematica_historica_I": {},
+  "lenguaje_visual_I": {},
+  "dibujo_I": {},
+  "pintura_I": {},
+  "ceramica_I": {},
+  "escultura_I": {},
+  "forma_color_I": {},
+  "practica_docente_I": {},
 
-
-
-
-
-const materias = [
-  {
-    nombre: "Pedagogía",
-    anio: 1,
-    requisitos: []
+  // SEGUNDO AÑO
+  "historia_social": {
+    regular: ["pedagogia", "problematica_cultural"]
   },
-  {
-    nombre: "Didáctica y currículum",
-    anio: 1,
-    requisitos: []
+  "antropologia": {
+    regular: ["problematica_cultural"]
   },
-  {
-    nombre: "Psicología y educación",
-    anio: 1,
-    requisitos: []
+  "sujeto_I": {
+    regular: ["psicologia_educacion"]
   },
-  // ... Agregaremos todas las materias aquí una por una más adelante
-];
+  "didactica_artes_I": {
+    regular: ["didactica_curriculum", "pedagogia"],
+    aprobado: ["didactica_curriculum"]
+  },
+  "problematica_historica_II": {
+    aprobado: ["problematica_historica_I"]
+  },
+  "lenguaje_visual_II": {
+    regular: ["lenguaje_visual_I"],
+    aprobado: ["forma_color_I"]
+  },
+  "forma_color_II": {
+    regular: ["forma_color_I"],
+    aprobado: ["forma_color_I"]
+  },
+  "dibujo_II": {
+    regular: ["dibujo_I", "pintura_I"],
+    aprobado: ["dibujo_I", "pintura_I"]
+  },
+  "pintura_II": {
+    regular: ["dibujo_I", "pintura_I"],
+    aprobado: ["dibujo_I", "pintura_I"]
+  },
+  "ceramica_II": {
+    regular: ["ceramica_I", "escultura_I"],
+    aprobado: ["ceramica_I", "escultura_I"]
+  },
+  "escultura_II": {
+    regular: ["ceramica_I", "escultura_I"],
+    aprobado: ["ceramica_I", "escultura_I"]
+  },
+  "grafica_I": {
+    regular: ["forma_color_I", "lenguaje_visual_I"]
+  },
+  "practica_docente_II": {
+    regular: ["pedagogia"],
+    aprobado: ["practica_docente_I", "psicologia_educacion"]
+  }
+  // Resto de los años continuará...
+};
 
-function guardarEstado(nombre, tipo) {
-  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
-  estado[nombre] = estado[nombre] || {};
-  estado[nombre][tipo] = true;
-  localStorage.setItem('estadoMaterias', JSON.stringify(estado));
-  renderMalla();
+function guardarEstado() {
+  const estados = {};
+  document.querySelectorAll('.materia input').forEach(input => {
+    estados[input.id] = input.checked;
+  });
+  localStorage.setItem('estadoMaterias', JSON.stringify(estados));
 }
 
-function cargarEstado(nombre) {
-  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
-  return estado[nombre] || {};
+function cargarEstado() {
+  const estados = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
+  for (let id in estados) {
+    const input = document.getElementById(id);
+    if (input) input.checked = estados[id];
+  }
 }
 
-function cumpleRequisitos(materia) {
-  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
-  return materia.requisitos.every(req => {
-    const est = estado[req.nombre] || {};
-    return est[req.estado];
+function verificarDesbloqueos() {
+  document.querySelectorAll('.materia').forEach(materia => {
+    const id = materia.dataset.id;
+    const regla = requisitos[id];
+    let habilitado = true;
+
+    if (regla) {
+      if (regla.regular) {
+        for (let req of regla.regular) {
+          if (!document.getElementById(req + '_regular')?.checked) {
+            habilitado = false;
+            break;
+          }
+        }
+      }
+      if (habilitado && regla.aprobado) {
+        for (let req of regla.aprobado) {
+          if (!document.getElementById(req + '_aprobado')?.checked) {
+            habilitado = false;
+            break;
+          }
+        }
+      }
+    }
+
+    materia.querySelectorAll('input').forEach(input => {
+      input.disabled = !habilitado;
+      if (!habilitado) input.checked = false;
+    });
   });
 }
 
-function renderMalla() {
-  const contenedor = document.getElementById("malla");
-  contenedor.innerHTML = "";
+document.addEventListener('DOMContentLoaded', () => {
+  cargarEstado();
+  verificarDesbloqueos();
 
-  materias.forEach(materia => {
-    const estado = cargarEstado(materia.nombre);
-    const puedeCursar = cumpleRequisitos(materia);
-
-    const div = document.createElement("div");
-    div.className = "materia";
-    if (!puedeCursar && materia.requisitos.length) div.classList.add("inactiva");
-    if (estado.aprobado) div.classList.add("aprobada");
-
-    const titulo = document.createElement("h3");
-    titulo.textContent = materia.nombre;
-    div.appendChild(titulo);
-
-    const estadoDiv = document.createElement("div");
-    estadoDiv.className = "estado";
-
-    const btnRegular = document.createElement("button");
-    btnRegular.textContent = "Regular";
-    btnRegular.className = "regular";
-    btnRegular.onclick = () => guardarEstado(materia.nombre, "regular");
-
-    const btnAprobado = document.createElement("button");
-    btnAprobado.textContent = "Aprobado";
-    btnAprobado.className = "aprobado";
-    btnAprobado.onclick = () => guardarEstado(materia.nombre, "aprobado");
-
-    estadoDiv.appendChild(btnRegular);
-    estadoDiv.appendChild(btnAprobado);
-    div.appendChild(estadoDiv);
-    contenedor.appendChild(div);
+  document.querySelectorAll('.materia input').forEach(input => {
+    input.addEventListener('change', () => {
+      guardarEstado();
+      verificarDesbloqueos();
+    });
   });
-}
+});
 
-document.addEventListener("DOMContentLoaded", renderMalla);
+
+
+
