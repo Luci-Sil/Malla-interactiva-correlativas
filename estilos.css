@@ -1,83 +1,68 @@
-/* Fondo general en cian pastel */
 body {
-  margin: 0;
-  padding: 20px;
-  background-color: #ccf2f4;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
+  background-color: #cff5f5; /* cian pastel */
   color: #333;
+  padding: 20px;
 }
 
-/* Título principal */
-h1 {
+h1, h2 {
   text-align: center;
   color: #444;
+}
+
+.anio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
-/* Contenedor general de la malla */
-.malla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-/* Cada año académico */
-.anio {
-  background-color: #f6c1e2;
-  border: 2px solid #d68cb1;
-  border-radius: 12px;
-  padding: 15px;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
-}
-
-/* Título del año */
-.anio h2 {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #7b2e56;
-}
-
-/* Contenedor de materias */
-.materias {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Cada materia */
-.subject {
-  background-color: #fff0f6;
-  border: 2px solid #d68cb1;
-  border-radius: 8px;
+.materia {
+  background-color: #fff;
+  border: 2px solid #aaa;
   padding: 10px;
-  font-size: 14px;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 2px 2px 5px #aaa;
+  position: relative;
+  cursor: pointer;
 }
 
-/* Materia desbloqueada */
-.subject.unlocked {
-  opacity: 1;
+.materia h3 {
+  margin: 0;
+  font-size: 16px;
 }
 
-/* Materia bloqueada */
-.subject:not(.unlocked) {
-  opacity: 0.5;
+.estado {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.estado span {
+  font-size: 12px;
+  border-radius: 5px;
+  padding: 2px 5px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.materia.aprobada {
+  background-color: #f8c2e0; /* magenta pastel */
+  border-color: #c64d9d;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.materia.no-disponible {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+  cursor: not-allowed;
   pointer-events: none;
+  opacity: 0.6;
 }
 
-/* Etiqueta de los checkboxes */
-.subject label {
-  display: block;
-  margin-top: 5px;
-}
-
-/* Checkboxes */
-.subject input[type="checkbox"] {
-  margin-right: 5px;
-}
 
 
 
