@@ -1,134 +1,100 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #a1e3e2; /* cian pastel */
-  margin: 0;
-  padding: 30px;
-  color: #333;
-}
-
-h1 {
-  text-align: center;
-  color: #912d63; /* magenta oscuro */
-  margin-bottom: 40px;
-}
-
-.anios-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.anio {
-  background-color: #d8a6c9; /* magenta pastel */
-  border: 2.5px solid #912d63; /* magenta oscuro */
-  border-radius: 12px;
-  padding: 15px 20px;
-  box-shadow: 0 3px 8px rgba(145, 45, 99, 0.3);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.anio h2 {
-  margin: 0 0 15px 0;
-  color: #5a1451; /* magenta más oscuro */
-  border-bottom: 2px solid #912d63;
-  padding-bottom: 8px;
-  font-size: 1.3rem;
-}
-
-.materia {
-  background-color: #f3d6e8; /* magenta pastel clarito */
-  border: 1.8px solid #912d63;
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin-bottom: 10px;
-  transition: background-color 0.25s ease;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.materia:hover {
-  background-color: #e8c2db;
-}
-
-.materia h3 {
-  margin: 0;
-  font-size: 1rem;
-  color: #751c6f;
-  flex-grow: 1;
-}
-
-.label-group {
-  display: flex;
-  gap: 10px;
-  margin-left: 15px;
-}
-
-label {
-  display: flex;
-  align-items: center;
-  color: #4c2154;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-input[type="checkbox"] {
-  accent-color: #912d63;
-  width: 14px;
-  height: 14px;
-  margin-right: 6px;
-  cursor: pointer;
-}
-
-/* Responsive: en pantallas muy pequeñas mostrar 1 columna */
-@media (max-width: 600px) {
-  .anios-container {
-    grid-template-columns: 1fr;
-  }
-}
+/* estilos.css */
 
 body {
-  background-color: #ccf5f5; /* Cian pastel */
-  font-family: sans-serif;
   margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #00bcd4; /* cian */
+  color: #222;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #770077;
+  color: #330033;
+  margin-bottom: 30px;
+  font-weight: bold;
 }
 
 .year {
-  border: 2px solid #aa66aa; /* Magenta oscuro */
-  background-color: #f8ccf8; /* Magenta pastel */
-  padding: 15px;
-  margin: 20px;
-  border-radius: 10px;
-  width: 45%;
-  float: left;
-  box-sizing: border-box;
-}
-
-.materia {
-  background-color: white;
-  border: 2px solid #770077;
+  margin-bottom: 30px;
   padding: 10px;
-  margin: 10px 0;
+  background-color: #f5c1d1; /* magenta pastel */
+  border: 2px solid #a8436f; /* magenta oscuro */
+  border-radius: 10px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.year h2 {
+  margin-top: 0;
+  color: #7a2150;
+  font-weight: 700;
+  text-align: center;
+}
+
+.subjects {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.subject {
+  background-color: #f5c1d1; /* magenta pastel */
+  border: 2px solid #a8436f; /* magenta oscuro */
   border-radius: 8px;
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.checkbox-container {
-  margin-top: 5px;
-}
-
-.disabled {
+.subject.locked {
   opacity: 0.5;
   pointer-events: none;
 }
+
+.subject .name {
+  flex: 1 1 100%;
+  font-weight: 600;
+  color: #4b0033;
+  margin-bottom: 5px;
+}
+
+.subject label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  color: #4b0033;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #a8436f;
+}
+
+/* Cambiar estilo cuando la materia está aprobada o regular */
+
+.subject.approved {
+  background-color: #dba6b9; /* un magenta pastel más claro */
+  border-color: #6a2044;
+  color: #2a001f;
+}
+
+.subject.regular:not(.approved) {
+  background-color: #e9a8be; /* un magenta pastel intermedio */
+  border-color: #7d2551;
+  color: #3c002a;
+}
+
 
