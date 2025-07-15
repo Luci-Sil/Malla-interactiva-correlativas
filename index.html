@@ -11,42 +11,73 @@
   <div id="malla">
     <div class="anio" id="anio1">
       <h2>Primer Año</h2>
-      <div class="materia" data-id="pedagogia">Pedagogía</div>
-      <div class="materia" data-id="didactica">Didáctica y currículum</div>
-      <div class="materia" data-id="psico">Psicología y educación</div>
-      <div class="materia" data-id="cultura">Problemática de la cultura argentina y latinoamericana</div>
-      <div class="materia" data-id="histarte1">Problemática histórica del arte I</div>
-      <div class="materia" data-id="lenguaje1">Lenguaje visual I</div>
-      <div class="materia" data-id="dibujo1">Dibujo I</div>
-      <div class="materia" data-id="pintura1">Pintura I</div>
-      <div class="materia" data-id="ceramica1">Cerámica I</div>
-      <div class="materia" data-id="escultura1">Escultura I</div>
-      <div class="materia" data-id="forma1">Forma y color I</div>
-      <div class="materia" data-id="practica1">Práctica docente I</div>
+      <div class="materia" data-nombre="Pedagogía"></div>
+      <div class="materia" data-nombre="Didáctica y currículum"></div>
+      <div class="materia" data-nombre="Psicología y educación"></div>
+      <div class="materia" data-nombre="Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Problemática histórica del arte I"></div>
+      <div class="materia" data-nombre="Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Dibujo I"></div>
+      <div class="materia" data-nombre="Pintura I"></div>
+      <div class="materia" data-nombre="Cerámica I"></div>
+      <div class="materia" data-nombre="Escultura I"></div>
+      <div class="materia" data-nombre="Forma y color I"></div>
+      <div class="materia" data-nombre="Práctica docente I"></div>
     </div>
 
     <div class="anio" id="anio2">
       <h2>Segundo Año</h2>
-      <div class="materia" data-id="historia_edu" data-prereq="pedagogia&cultura">Historia social y política de la educación Argentina (R: pedagogía + problemática de la cultura argentina y latinoamericana)</div>
-      <div class="materia" data-id="antro" data-prereq="cultura">Antropología sociocultural (R: problemática de la cultura argentina y latinoamericana)</div>
-      <div class="materia" data-id="sujeto1" data-prereq="psico">Sujeto de la educación I (R: psicología y educación)</div>
-      <div class="materia" data-id="didav1" data-prereq="didactica&pedagogia">Didáctica de las artes visuales I (C: didáctica y currículum + pedagogía; R: pedagogía; A: didáctica y currículum)</div>
-      <div class="materia" data-id="histarte2" data-prereq="histarte1">Problemática histórica del arte II (R: problemática histórica del arte I)</div>
-      <div class="materia" data-id="lenguaje2" data-prereq="lenguaje1&forma1">Lenguaje visual II (C: lenguaje visual I; A: forma y color I)</div>
-      <div class="materia" data-id="forma2" data-prereq="forma1">Forma y color II (C: forma y color I; A: forma y color I)</div>
-      <div class="materia" data-id="dibujo2" data-prereq="dibujo1&pintura1&forma1&lenguaje1">Dibujo II (C: dibujo I + pintura I; R: forma y color I + lenguaje visual I; A: dibujo I + pintura I)</div>
-      <div class="materia" data-id="pintura2" data-prereq="dibujo1&pintura1&forma1&lenguaje1">Pintura II (C: dibujo I + pintura I; R: forma y color I + lenguaje visual I; A: dibujo I + pintura I)</div>
-      <div class="materia" data-id="ceramica2" data-prereq="ceramica1&escultura1&forma1&lenguaje1">Cerámica II (C: cerámica I + escultura I; R: forma y color I + lenguaje visual I; A: cerámica I + escultura I)</div>
-      <div class="materia" data-id="escultura2" data-prereq="ceramica1&escultura1&forma1&lenguaje1">Escultura II (C: cerámica I + escultura I; R: forma y color I + lenguaje visual I; A: cerámica I + escultura I)</div>
-      <div class="materia" data-id="grafica1" data-prereq="forma1&lenguaje1">Gráfica y técnicas de impresión I (R: forma y color I + lenguaje visual I)</div>
-      <div class="materia" data-id="practica2" data-prereq="pedagogia&practica1&psico">Práctica docente II (C: pedagogía + práctica docente I; A: psicología y educación)</div>
+      <div class="materia" data-nombre="Historia social y política de la educación Argentina" data-requisitos="Pedagogía|Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Antropología sociocultural" data-requisitos="Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Sujeto de la educación I" data-requisitos="Psicología y educación"></div>
+      <div class="materia" data-nombre="Didáctica de las artes visuales I" data-requisitos="Didáctica y currículum|Pedagogía"></div>
+      <div class="materia" data-nombre="Problemática histórica del arte II" data-requisitos="Problemática histórica del arte I"></div>
+      <div class="materia" data-nombre="Lenguaje visual II" data-requisitos="Lenguaje visual I|Forma y color I"></div>
+      <div class="materia" data-nombre="Forma y color II" data-requisitos="Forma y color I"></div>
+      <div class="materia" data-nombre="Dibujo II" data-requisitos="Dibujo I|Pintura I|Forma y color I|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Pintura II" data-requisitos="Dibujo I|Pintura I|Forma y color I|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Cerámica II" data-requisitos="Cerámica I|Escultura I|Forma y color I|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Escultura II" data-requisitos="Cerámica I|Escultura I|Forma y color I|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Gráfica y técnicas de impresión I" data-requisitos="Forma y color I|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Práctica docente II" data-requisitos="Pedagogía|Psicología y educación|Práctica docente I"></div>
     </div>
 
-    <!-- Tercer y Cuarto Año se insertarán en el próximo paso -->
+    <div class="anio" id="anio3">
+      <h2>Tercer Año</h2>
+      <div class="materia" data-nombre="Problemática filosófica" data-requisitos="Antropología sociocultural|Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Problemática del arte argentino y latinoamericano" data-requisitos="Problemática histórica del arte I|Problemática histórica del arte II|Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Sujeto de la educación II" data-requisitos="Sujeto de la educación I|Psicología y educación"></div>
+      <div class="materia" data-nombre="Didáctica de las artes visuales II" data-requisitos="Didáctica y currículum|Didáctica de las artes visuales I|Forma y color I|Lenguaje visual I|Sujeto de la educación I|Práctica docente I|Pedagogía|Psicología y educación"></div>
+      <div class="materia" data-nombre="Lenguaje visual III" data-requisitos="Lenguaje visual I|Lenguaje visual II"></div>
+      <div class="materia" data-nombre="Educación sexual integral" data-requisitos="Psicología y educación"></div>
+      <div class="materia" data-nombre="Dibujo III" data-requisitos="Dibujo I|Dibujo II|Pintura I|Pintura II|Forma y color II|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Pintura III" data-requisitos="Dibujo I|Dibujo II|Pintura I|Pintura II|Forma y color II|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Cerámica III" data-requisitos="Cerámica I|Cerámica II|Escultura I|Escultura II|Forma y color II|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Escultura III" data-requisitos="Cerámica I|Cerámica II|Escultura I|Escultura II|Forma y color II|Lenguaje visual I"></div>
+      <div class="materia" data-nombre="Gráfica y técnicas de impresión II" data-requisitos="Gráfica y técnicas de impresión I|Forma y color I|Lenguaje visual I|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Práctica docente III" data-requisitos="Práctica docente II|Didáctica de las artes visuales I|Sujeto de la educación I|Pedagogía|Didáctica y currículum|Dibujo I|Pintura I|Cerámica I|Escultura I|Forma y color I|Lenguaje visual I|Dibujo II|Pintura II|Cerámica II|Escultura II|Forma y color II|Lenguaje visual II|Problemática histórica del arte II|Problemática histórica del arte I"></div>
+      <div class="materia" data-nombre="UDI"></div>
+    </div>
+
+    <div class="anio" id="anio4">
+      <h2>Cuarto Año</h2>
+      <div class="materia" data-nombre="Ética y trabajo docente" data-requisitos="Problemática filosófica|Historia social y política de la educación Argentina"></div>
+      <div class="materia" data-nombre="Prácticas investigativas" data-requisitos="Pedagogía|Didáctica y currículum|Psicología y educación|Problemática de la cultura argentina y latinoamericana|Problemática histórica del arte I|Lenguaje visual I|Dibujo I|Pintura I|Cerámica I|Escultura I|Forma y color I|Práctica docente I|Lenguaje visual III|Dibujo II|Pintura II|Cerámica II|Escultura II"></div>
+      <div class="materia" data-nombre="Estética" data-requisitos="Problemática filosófica|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Estéticas contemporáneas" data-requisitos="Lenguaje visual III|Problemática del arte argentino y latinoamericano|Problemática histórica del arte II|Problemática de la cultura argentina y latinoamericana"></div>
+      <div class="materia" data-nombre="Proyecto final dibujo IV" data-requisitos="Dibujo III|Pintura III|Cerámica III|Escultura III|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Proyecto final pintura IV" data-requisitos="Dibujo III|Pintura III|Cerámica III|Escultura III|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Proyecto final cerámica IV" data-requisitos="Dibujo III|Pintura III|Cerámica III|Escultura III|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Proyecto final escultura IV" data-requisitos="Dibujo III|Pintura III|Cerámica III|Escultura III|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Gráfica y técnicas de impresión III" data-requisitos="Gráfica y técnicas de impresión I|Gráfica y técnicas de impresión II|Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Tecnología de la imagen" data-requisitos="Lenguaje visual III"></div>
+      <div class="materia" data-nombre="Práctica docente IV" data-requisitos="Dibujo III|Pintura III|Cerámica III|Escultura III|Lenguaje visual III|Problemática del arte argentino y latinoamericano|Práctica docente III|Didáctica de las artes visuales II|Sujeto de la educación II|Forma y color II|Lenguaje visual II|Dibujo II|Pintura II|Cerámica II|Escultura II"></div>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
