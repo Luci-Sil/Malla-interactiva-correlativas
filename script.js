@@ -1,57 +1,84 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const subjects = document.querySelectorAll('.subject');
-  const storedStates = JSON.parse(localStorage.getItem('subjectStates')) || {};
 
-  subjects.forEach(subject => {
-    const subjectId = subject.dataset.id;
-    const regularCheckbox = subject.querySelector('.regular');
-    const approvedCheckbox = subject.querySelector('.approved');
 
-    // Load saved state
-    if (storedStates[subjectId]) {
-      regularCheckbox.checked = storedStates[subjectId].regular;
-      approvedCheckbox.checked = storedStates[subjectId].approved;
-    }
 
-    function updateState() {
-      storedStates[subjectId] = {
-        regular: regularCheckbox.checked,
-        approved: approvedCheckbox.checked
-      };
-      localStorage.setItem('subjectStates', JSON.stringify(storedStates));
-      updateAllSubjects();
-    }
 
-    regularCheckbox.addEventListener('change', updateState);
-    approvedCheckbox.addEventListener('change', updateState);
+
+
+const materias = [
+  {
+    nombre: "Pedagogía",
+    anio: 1,
+    requisitos: []
+  },
+  {
+    nombre: "Didáctica y currículum",
+    anio: 1,
+    requisitos: []
+  },
+  {
+    nombre: "Psicología y educación",
+    anio: 1,
+    requisitos: []
+  },
+  // ... Agregaremos todas las materias aquí una por una más adelante
+];
+
+function guardarEstado(nombre, tipo) {
+  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
+  estado[nombre] = estado[nombre] || {};
+  estado[nombre][tipo] = true;
+  localStorage.setItem('estadoMaterias', JSON.stringify(estado));
+  renderMalla();
+}
+
+function cargarEstado(nombre) {
+  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
+  return estado[nombre] || {};
+}
+
+function cumpleRequisitos(materia) {
+  const estado = JSON.parse(localStorage.getItem('estadoMaterias')) || {};
+  return materia.requisitos.every(req => {
+    const est = estado[req.nombre] || {};
+    return est[req.estado];
   });
+}
 
-  function updateAllSubjects() {
-    subjects.forEach(subject => {
-      const subjectId = subject.dataset.id;
-      const prerequisites = JSON.parse(subject.dataset.prerequisites || '[]');
-      const regularCheckbox = subject.querySelector('.regular');
-      const approvedCheckbox = subject.querySelector('.approved');
+function renderMalla() {
+  const contenedor = document.getElementById("malla");
+  contenedor.innerHTML = "";
 
-      let canEnable = true;
-      prerequisites.forEach(prereq => {
-        const state = storedStates[prereq.id];
-        if (!state || !state[prereq.type]) {
-          canEnable = false;
-        }
-      });
+  materias.forEach(materia => {
+    const estado = cargarEstado(materia.nombre);
+    const puedeCursar = cumpleRequisitos(materia);
 
-      regularCheckbox.disabled = !canEnable;
-      approvedCheckbox.disabled = !canEnable;
-      subject.classList.toggle('unlocked', canEnable);
-    });
-  }
+    const div = document.createElement("div");
+    div.className = "materia";
+    if (!puedeCursar && materia.requisitos.length) div.classList.add("inactiva");
+    if (estado.aprobado) div.classList.add("aprobada");
 
-  updateAllSubjects();
-});
+    const titulo = document.createElement("h3");
+    titulo.textContent = materia.nombre;
+    div.appendChild(titulo);
 
+    const estadoDiv = document.createElement("div");
+    estadoDiv.className = "estado";
 
+    const btnRegular = document.createElement("button");
+    btnRegular.textContent = "Regular";
+    btnRegular.className = "regular";
+    btnRegular.onclick = () => guardarEstado(materia.nombre, "regular");
 
+    const btnAprobado = document.createElement("button");
+    btnAprobado.textContent = "Aprobado";
+    btnAprobado.className = "aprobado";
+    btnAprobado.onclick = () => guardarEstado(materia.nombre, "aprobado");
 
+    estadoDiv.appendChild(btnRegular);
+    estadoDiv.appendChild(btnAprobado);
+    div.appendChild(estadoDiv);
+    contenedor.appendChild(div);
+  });
+}
 
-
+document.addEventListener("DOMContentLoaded", renderMalla);
