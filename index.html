@@ -8,32 +8,46 @@
 </head>
 <body>
   <h1>Malla Curricular de Profesorado en Artes Visuales</h1>
-
   <div id="malla">
-    <section id="primer-año">
+    <div class="anio" id="anio1">
       <h2>Primer Año</h2>
-      <div class="anio" data-anio="1"></div>
-    </section>
+      <div class="materia" data-id="pedagogia">Pedagogía</div>
+      <div class="materia" data-id="didactica">Didáctica y currículum</div>
+      <div class="materia" data-id="psico">Psicología y educación</div>
+      <div class="materia" data-id="cultura">Problemática de la cultura argentina y latinoamericana</div>
+      <div class="materia" data-id="histarte1">Problemática histórica del arte I</div>
+      <div class="materia" data-id="lenguaje1">Lenguaje visual I</div>
+      <div class="materia" data-id="dibujo1">Dibujo I</div>
+      <div class="materia" data-id="pintura1">Pintura I</div>
+      <div class="materia" data-id="ceramica1">Cerámica I</div>
+      <div class="materia" data-id="escultura1">Escultura I</div>
+      <div class="materia" data-id="forma1">Forma y color I</div>
+      <div class="materia" data-id="practica1">Práctica docente I</div>
+    </div>
 
-    <section id="segundo-año">
+    <div class="anio" id="anio2">
       <h2>Segundo Año</h2>
-      <div class="anio" data-anio="2"></div>
-    </section>
+      <div class="materia" data-id="historia_edu" data-prereq="pedagogia&cultura">Historia social y política de la educación Argentina (R: pedagogía + problemática de la cultura argentina y latinoamericana)</div>
+      <div class="materia" data-id="antro" data-prereq="cultura">Antropología sociocultural (R: problemática de la cultura argentina y latinoamericana)</div>
+      <div class="materia" data-id="sujeto1" data-prereq="psico">Sujeto de la educación I (R: psicología y educación)</div>
+      <div class="materia" data-id="didav1" data-prereq="didactica&pedagogia">Didáctica de las artes visuales I (C: didáctica y currículum + pedagogía; R: pedagogía; A: didáctica y currículum)</div>
+      <div class="materia" data-id="histarte2" data-prereq="histarte1">Problemática histórica del arte II (R: problemática histórica del arte I)</div>
+      <div class="materia" data-id="lenguaje2" data-prereq="lenguaje1&forma1">Lenguaje visual II (C: lenguaje visual I; A: forma y color I)</div>
+      <div class="materia" data-id="forma2" data-prereq="forma1">Forma y color II (C: forma y color I; A: forma y color I)</div>
+      <div class="materia" data-id="dibujo2" data-prereq="dibujo1&pintura1&forma1&lenguaje1">Dibujo II (C: dibujo I + pintura I; R: forma y color I + lenguaje visual I; A: dibujo I + pintura I)</div>
+      <div class="materia" data-id="pintura2" data-prereq="dibujo1&pintura1&forma1&lenguaje1">Pintura II (C: dibujo I + pintura I; R: forma y color I + lenguaje visual I; A: dibujo I + pintura I)</div>
+      <div class="materia" data-id="ceramica2" data-prereq="ceramica1&escultura1&forma1&lenguaje1">Cerámica II (C: cerámica I + escultura I; R: forma y color I + lenguaje visual I; A: cerámica I + escultura I)</div>
+      <div class="materia" data-id="escultura2" data-prereq="ceramica1&escultura1&forma1&lenguaje1">Escultura II (C: cerámica I + escultura I; R: forma y color I + lenguaje visual I; A: cerámica I + escultura I)</div>
+      <div class="materia" data-id="grafica1" data-prereq="forma1&lenguaje1">Gráfica y técnicas de impresión I (R: forma y color I + lenguaje visual I)</div>
+      <div class="materia" data-id="practica2" data-prereq="pedagogia&practica1&psico">Práctica docente II (C: pedagogía + práctica docente I; A: psicología y educación)</div>
+    </div>
 
-    <section id="tercer-año">
-      <h2>Tercer Año</h2>
-      <div class="anio" data-anio="3"></div>
-    </section>
-
-    <section id="cuarto-año">
-      <h2>Cuarto Año</h2>
-      <div class="anio" data-anio="4"></div>
-    </section>
+    <!-- Tercer y Cuarto Año se insertarán en el próximo paso -->
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
